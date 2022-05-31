@@ -1,0 +1,36 @@
+.wrapper {
+  // border: 2px dashed red;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  position: relative;
+  right: 0px;
+  transition: right var(--duration-ui);
+}
+
+.base {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 0px;
+
+  & > div {
+    height: inherit;
+    max-width: var(--size);
+    min-width: var(--size);
+  }
+}
+
+.left,
+.right {
+  --size: 320px;
+  background-color: var(--slate1);
+  border-left: 1px solid var(--slate6);
+  border-right: 1px solid var(--slate6);
+}
+
+.center {
+  --size: 100vw;
+  background-color: var(--slate2);
+}
