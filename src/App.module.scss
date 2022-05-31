@@ -1,5 +1,5 @@
 .wrapper {
-  // border: 2px dashed red;
+  background-color: var(--slate1);
   display: flex;
   height: inherit;
   justify-content: center;
@@ -16,6 +16,7 @@
   right: 0px;
 
   & > div {
+    color: white;
     height: inherit;
     max-width: var(--size);
     min-width: var(--size);

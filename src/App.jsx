@@ -11,7 +11,7 @@ export default function App() {
   const SIDEBAR_WIDTH = 320;
   const DURATION_TIME = 100;
 
-  const bind = useDrag(({ down, movement: [mx], velocity: [vx] }) => {
+  const bind = useDrag(({ down, movement: [mx] }) => {
     if (down) {
       document.body.style.userSelect = 'none';
       setIsDragging(true);
@@ -20,15 +20,8 @@ export default function App() {
     } else {
       document.body.style.userSelect = null;
 
-      // Momentum based movement
-      if (vx > 1) {
-        // TODO: Cap the velocity to 2 or 3 px/ms
-        setXPosition(vx * mx + initialXPosition);
-        setInitialXPosition(state => vx * mx + state);
-      } else {
-        setXPosition(initialXPosition + mx);
-        setInitialXPosition(state => state + mx);
-      }
+      setXPosition(initialXPosition + mx);
+      setInitialXPosition(state => state + mx);
 
       setIsDragging(false);
       baseRef.current.style.transition = `left ${DURATION_TIME}ms`;
@@ -46,9 +39,9 @@ export default function App() {
       ref={baseRef}
       style={{ left: `${xPosition}px`, touchAction: 'none' }}
     >
-      <div className={styles.left}></div>
-      <div className={styles.center}></div>
-      <div className={styles.right}></div>
+      <div className={styles.left}>left</div>
+      <div className={styles.center}>center</div>
+      <div className={styles.right}>right</div>
     </main>
   );
 }
