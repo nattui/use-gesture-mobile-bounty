@@ -23,6 +23,17 @@ export default function App() {
       setXPosition(initialXPosition + mx);
       setInitialXPosition(state => state + mx);
 
+      // // What broke it on Andriod I think
+      // // Momentum based movement
+      // if (vx > 1) {
+      //   // TODO: Cap the velocity to 2 or 3 px/ms
+      //   setXPosition(vx * mx + initialXPosition);
+      //   setInitialXPosition(state => vx * mx + state);
+      // } else {
+      //   setXPosition(initialXPosition + mx);
+      //   setInitialXPosition(state => state + mx);
+      // }
+
       setIsDragging(false);
       baseRef.current.style.transition = `left ${DURATION_TIME}ms`;
     }
