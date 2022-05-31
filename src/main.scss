@@ -16,6 +16,10 @@ main {
   height: 100%;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 :root {
   --slate1: hsl(200 7% 8.8%);
   --slate2: hsl(195 7.1% 11%);

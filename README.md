@@ -2,10 +2,11 @@
 
 For @tumuchcoding
 
-### Start
+https://use-gesture-mobile-bounty.vercel.app/
+
+### Quick start
 
 ```bash
-npm i
-
+npm install
 npm run dev
 ```
